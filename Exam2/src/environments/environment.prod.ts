@@ -5,7 +5,7 @@ export const environment = {
     authDomain: "moorect-exam-2.firebaseapp.com",
     databaseURL: "https://moorect-exam-2.firebaseio.com",
     projectId: "moorect-exam-2",
-    storageBucket: "",
+    storageBucket: "moorect-exam-2.appspot.com",
     messagingSenderId: "522932459669"
   }
 };

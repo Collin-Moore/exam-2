@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from "angularfire2/auth";
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-main',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public signInStatus: boolean = false;
+  public signedInPhoneNumber: string = "000";
+  public recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  private authStateSubscription: Subscription;
+
+  constructor(private afauth: AngularFireAuth) {
+    
+  }
 
   ngOnInit() {
+    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    this.recaptchaVerifier.render();
+
+    this.authStateSubscription = this.afauth.authState.subscribe((user: firebase.User) => {
+      if (user) {
+        this.signInStatus = true;
+      } else {
+        this.signInStatus = false;
+      }
+    });
+
+
   }
 
 }
