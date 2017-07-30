@@ -35,11 +35,11 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './+main/main.component';
 import { MathGuard } from "./math.guard";
-import { MathComponent } from './math/math.component';
-import { BouncedComponent } from './bounced/bounced.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MathComponent } from './+math/math.component';
+import { BouncedComponent } from './+bounced/bounced.component';
+import { PageNotFoundComponent } from './+page-not-found/page-not-found.component';
 
 export const MaterialModules = [
   MdAutocompleteModule,

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from "./main/main.component";
+import { MainComponent } from "./+main/main.component";
 import { MathGuard } from "./math.guard";
-import { MathComponent } from "./math/math.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { BouncedComponent } from "./bounced/bounced.component";
+import { MathComponent } from "./+math/math.component";
+import { PageNotFoundComponent } from "./+page-not-found/page-not-found.component";
+import { BouncedComponent } from "./+bounced/bounced.component";
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', component: MainComponent },
