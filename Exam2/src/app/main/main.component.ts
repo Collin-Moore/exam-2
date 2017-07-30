@@ -11,10 +11,11 @@ import { Subscription } from "rxjs/Subscription";
 export class MainComponent implements OnInit {
 
   public signInStatus: boolean = false;
-  public signedInPhoneNumber: string = "000";
+  public signedInPhoneNumber: string;
 
   public confirmationCode: string;
   public phoneNumber: string = "+1";
+  public confirmationResult: firebase.auth.ConfirmationResult;
 
   public recaptchaVerifier: firebase.auth.RecaptchaVerifier;
   
@@ -40,11 +41,32 @@ export class MainComponent implements OnInit {
   }
 
   onConfirmationCodeSubmit(): void {
-    
+    this.confirmationResult.confirm(this.confirmationCode).then((result) => {
+      console.log("user signed in successfully");
+      this.signedInPhoneNumber = this.phoneNumber;
+     }).catch((error) => {
+       console.log(error);
+       console.log("user could not sign in"); 
+      })
   }
 
   onPhoneNumberSubmit(): void {
-    console.log(this.phoneNumber);
+    firebase.auth().signInWithPhoneNumber(this.phoneNumber, this.recaptchaVerifier).then((confirmationResult) => {
+      this.confirmationResult = confirmationResult;
+      console.log("SMS sent to phone number"); 
+     }).catch((error) => {
+       console.log(error);
+       console.log("SMS not sent!!!");
+       this.recaptchaVerifier.render().then((widgetId) => {
+         // doesn't work because I would need an reCAPTCHA api key, its a feature that you have to refresh
+         //grecaptcha.reset(widgetId);
+        })
+      });
+  }
+
+  signOut(): void {
+    this.afauth.auth.signOut();
+    console.log("user is signed out");
   }
 
 }

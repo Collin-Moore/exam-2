@@ -5,7 +5,7 @@
   <ng-template #signedInTemplate>
     <div fxLayout="column" fxLayoutAlign="center center">
       <span>You are signed in with phone number: {{signedInPhoneNumber}}</span>
-      <button md-raised-button color="accent">Sign Out</button>
+      <button md-raised-button color="accent" (click)="signOut()">Sign Out</button>
     </div>
   </ng-template>
 </md-card>
