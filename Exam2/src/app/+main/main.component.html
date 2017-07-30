@@ -1,11 +1,11 @@
-<div fxFlex fxFlex.gt-sm="482px">
+<div fxFlex fxFlex.gt-sm="476px">
 <md-card fxLayout="column" fxLayoutAlign="center center">
   <div *ngIf="!signInStatus; else signedInTemplate" fxLayoutAlign="center center">
     <span>You are not signed in.</span>
   </div>
   <ng-template #signedInTemplate>
     <div fxLayout="column" fxLayoutAlign="center center">
-      <span>You are signed in with phone number: {{signedInPhoneNumber}}</span>
+      <span>Signed in with phone number: {{signedInPhoneNumber}}</span>
       <button id="signout" md-raised-button color="accent" (click)="signOut()">Sign Out</button>
     </div>
   </ng-template>
