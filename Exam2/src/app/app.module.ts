@@ -34,6 +34,8 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
+import { MainComponent } from './main/main.component';
+import { MathGuard } from "./math.guard";
 
 
 export const MaterialModules = [
@@ -64,7 +66,8 @@ export const MaterialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,9 @@ export const MaterialModules = [
     MaterialModules,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [
+    MathGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
