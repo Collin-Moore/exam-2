@@ -8,8 +8,8 @@ import { BouncedComponent } from "./bounced/bounced.component";
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', component: MainComponent },
-    { path: 'math/:numerator/:denominator', pathMatch: 'full', component: MathComponent, canActivate: [MathGuard] },
-    { path: 'math/:numerator/:denominator', pathMatch: 'full', component: BouncedComponent, canActivate: [MathGuard] },
+    { path: 'math/:numerator/:denominator', pathMatch: 'full', component: MathComponent, canActivate: [MathGuard]},
+    { path: 'bounced', pathMatch: 'full', component: BouncedComponent },
     { path: '**', component: PageNotFoundComponent},
 ];
 
