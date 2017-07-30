@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyC7BEz5gETsXmPAZt4OiYBq8s4-CDLuLJs",
+    authDomain: "moorect-exam-2.firebaseapp.com",
+    databaseURL: "https://moorect-exam-2.firebaseio.com",
+    projectId: "moorect-exam-2",
+    storageBucket: "",
+    messagingSenderId: "522932459669"
+  }
 };
