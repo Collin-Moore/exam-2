@@ -32,6 +32,7 @@ export class MainComponent implements OnInit {
     this.authStateSubscription = this.afauth.authState.subscribe((user: firebase.User) => {
       if (user) {
         this.signInStatus = true;
+        this.signedInPhoneNumber = user.phoneNumber;
       } else {
         this.signInStatus = false;
       }
@@ -43,7 +44,6 @@ export class MainComponent implements OnInit {
   onConfirmationCodeSubmit(): void {
     this.confirmationResult.confirm(this.confirmationCode).then((result) => {
       console.log("user signed in successfully");
-      this.signedInPhoneNumber = this.phoneNumber;
      }).catch((error) => {
        console.log(error);
        console.log("user could not sign in"); 
