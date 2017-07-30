@@ -13,8 +13,8 @@ export class MainComponent implements OnInit {
   public signInStatus: boolean = false;
   public signedInPhoneNumber: string = "000";
 
-  public confirmationCode: number;
-  public phoneNumber: number;
+  public confirmationCode: string;
+  public phoneNumber: string = "+1";
 
   public recaptchaVerifier: firebase.auth.RecaptchaVerifier;
   

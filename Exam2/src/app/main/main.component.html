@@ -9,17 +9,19 @@
     </div>
   </ng-template>
 </md-card>
-<md-card>
-  <md-card-title>Phone number authentication</md-card-title>
+<md-card fxLayout="column">
+  <md-card-title fxLayoutAlign="center center">
+    Phone number authentication
+  </md-card-title>
   <md-card-content fxLayout="column" fxLayoutAlign="none end">
     <md-input-container>
-      <input #phoneNumberInput mdInput type="text" required placeholder="Phone number (example +17203347437)" name="phoneNumber" [(ngModel)]="phoneNumber">
+      <input mdInput type="text" required placeholder="Phone number (example +17203347437)" name="phoneNumber" [(ngModel)]="phoneNumber">
     </md-input-container>
     <div id="recaptcha-container"></div>
     <button md-raised-button color="primary" (click)="onPhoneNumberSubmit(phoneNumber)">Send code</button>
 
     <md-input-container>
-      <input #confirmationCodeInput mdInput type="text" required placeholder="Confirmation code" name="confirmationCode" [(ngModel)]="confirmationCode">
+      <input mdInput type="text" required placeholder="Confirmation code" name="confirmationCode" [(ngModel)]="confirmationCode">
     </md-input-container>
     <button md-raised-button color="accent" (click)="onConfirmationCodeSubmit(confirmationCode)">SignIn</button>
   </md-card-content>  
