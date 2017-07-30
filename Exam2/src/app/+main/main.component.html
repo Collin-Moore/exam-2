@@ -19,12 +19,12 @@
       <input mdInput type="text" required placeholder="Phone number (example +17203347437)" name="phoneNumber" [(ngModel)]="phoneNumber">
     </md-input-container>
     <div id="recaptcha-container"></div>
-    <button md-raised-button color="primary" (click)="onPhoneNumberSubmit(phoneNumber)">Send code</button>
+    <button md-raised-button color="primary" (click)="onPhoneNumberSubmit()">Send code</button>
 
     <md-input-container>
       <input mdInput type="text" required placeholder="Confirmation code" name="confirmationCode" [(ngModel)]="confirmationCode">
     </md-input-container>
-    <button md-raised-button color="accent" (click)="onConfirmationCodeSubmit(confirmationCode)">SignIn</button>
+    <button md-raised-button color="accent" (click)="onConfirmationCodeSubmit()">SignIn</button>
   </md-card-content>  
 </md-card>
 </div>
