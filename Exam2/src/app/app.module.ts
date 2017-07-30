@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
   MdAutocompleteModule,
@@ -72,6 +73,7 @@ export const MaterialModules = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     BrowserAnimationsModule,
     MaterialModules,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
