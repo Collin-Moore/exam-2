@@ -12,7 +12,12 @@ export class MainComponent implements OnInit {
 
   public signInStatus: boolean = false;
   public signedInPhoneNumber: string = "000";
+
+  public confirmationCode: number;
+  public phoneNumber: number;
+
   public recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  
   private authStateSubscription: Subscription;
 
   constructor(private afauth: AngularFireAuth) {
@@ -32,6 +37,14 @@ export class MainComponent implements OnInit {
     });
 
 
+  }
+
+  onConfirmationCodeSubmit(): void {
+    
+  }
+
+  onPhoneNumberSubmit(): void {
+    console.log(this.phoneNumber);
   }
 
 }
